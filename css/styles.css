@@ -1,0 +1,31 @@
+.btn {
+	background: rgba(255, 141, 0, 0.67);
+	padding: 5px 12px 5px 12px;
+    font-size: 17px;
+    border-radius: 3px;
+    color: #fff;
+}
+
+.btn:hover {
+    background: rgba(255, 141, 0, 0.83);
+}
+.btn2 {
+	background: rgba(239, 255, 0, 0.37);
+  	padding: 5px 12px 5px 12px;
+    font-size: 15px;
+    border-radius: 3px
+}
+
+.btn2:hover {
+    background: rgba(239, 255, 0, 0.58);
+}
+.btn3 {
+	background: rgba(0, 102, 255, 0.15);
+  	padding: 5px 12px 5px 12px;
+    font-size: 15px;
+    border-radius: 3px
+}
+
+.btn3:hover {
+    background: rgba(0, 102, 255, 0.32);
+}
