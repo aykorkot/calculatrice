@@ -12,9 +12,9 @@ for(var i = 0; i < btns.length; i++) {
     btn.onclick = function() {
 
     	var x = this.value;
-    	lastNum = x;
+    
 		document.getElementById("resultat").value = document.getElementById("resultat").value + x ;
-	
+		lastNum = x;
     }
 }
  
@@ -23,7 +23,8 @@ for(var i = 0; i < btns.length; i++) {
 document.getElementById("addition").onclick = function (){
 	statusEnCours = "+";
 	var x = document.getElementById("addition").value;
-	document.getElementById("resultat").value = document.getElementById("resultat").value + " " + x + " ";	
+	document.getElementById("resultat").value = document.getElementById("resultat").value + " " + x + " ";
+	cpt=0;	
 
 }
 
@@ -32,13 +33,15 @@ document.getElementById("soustraction").onclick = function (){
 	statusEnCours = "-";
 	var x = document.getElementById("soustraction").value;
 	document.getElementById("resultat").value = document.getElementById("resultat").value + " " + x + " ";
+	cpt=0;
 }
 
 //multiplication
 document.getElementById("multiplication").onclick = function (){
 	statusEnCours = "x";
 	var x = document.getElementById("multiplication").value;
-	document.getElementById("resultat").value = document.getElementById("resultat").value + " " + x + " ";	
+	document.getElementById("resultat").value = document.getElementById("resultat").value + " " + x + " ";
+	cpt=0;	
 }
 
 
@@ -48,6 +51,7 @@ document.getElementById("division").onclick = function (){
 	statusEnCours = "/";
 	var x = document.getElementById("division").value;
 	document.getElementById("resultat").value = document.getElementById("resultat").value + " " + x + " ";
+	cpt=0;
 
 }
 
@@ -57,11 +61,13 @@ document.getElementById("division").onclick = function (){
 document.getElementById("egal").onclick = function (){
 
 	var valeur = document.getElementById("resultat").value;
-
 	if(cpt===0){
 		document.getElementById("resultat").value = eval(valeur);
 		cpt = 1;
 	}else{
+
+		document.getElementById("resultat").value = eval(valeur+"+"+lastNum);
+		
 		if(statusEnCours==="+"){
 			document.getElementById("resultat").value = eval(valeur+"+"+lastNum);
 		}
@@ -76,9 +82,8 @@ document.getElementById("egal").onclick = function (){
 		}
 	}
 	
-/*	console.log(lastNum);
-	console.log(valeur);
-	console.log(valeur+"+"+lastNum);*/
+	console.log(lastNum);
+	console.log(valeur+"+"+lastNum);
 	
 }
 
