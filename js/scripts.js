@@ -1,31 +1,37 @@
-
 var statusEnCours = "";
 var lastNum;
 var cpt =0;
 var btns = document.getElementsByClassName("nbrBtn");
+var nbr = "";
 
+var x;
 
 // boucler sur les boutons
 for(var i = 0; i < btns.length; i++) {
    
     var btn = btns[i];
+ 
     btn.onclick = function() {
 
-    	var x = this.value;
-    
+    	x = this.value;
+    	nbr = nbr+x;
+
 		document.getElementById("resultat").value = document.getElementById("resultat").value + x ;
-		lastNum = x;
+		lastNum = nbr;
+
+		console.log(nbr);
     }
 }
  
 
 //addition 
 document.getElementById("addition").onclick = function (){
+
 	statusEnCours = "+";
 	var x = document.getElementById("addition").value;
 	document.getElementById("resultat").value = document.getElementById("resultat").value + " " + x + " ";
 	cpt=0;	
-
+	nbr = "";
 }
 
 //soustraction
@@ -34,6 +40,7 @@ document.getElementById("soustraction").onclick = function (){
 	var x = document.getElementById("soustraction").value;
 	document.getElementById("resultat").value = document.getElementById("resultat").value + " " + x + " ";
 	cpt=0;
+nbr = "";
 }
 
 //multiplication
@@ -41,7 +48,8 @@ document.getElementById("multiplication").onclick = function (){
 	statusEnCours = "x";
 	var x = document.getElementById("multiplication").value;
 	document.getElementById("resultat").value = document.getElementById("resultat").value + " " + x + " ";
-	cpt=0;	
+	cpt=0;
+	nbr = "";	
 }
 
 
@@ -52,6 +60,7 @@ document.getElementById("division").onclick = function (){
 	var x = document.getElementById("division").value;
 	document.getElementById("resultat").value = document.getElementById("resultat").value + " " + x + " ";
 	cpt=0;
+	nbr = "";
 
 }
 
@@ -81,10 +90,7 @@ document.getElementById("egal").onclick = function (){
 			document.getElementById("resultat").value = eval(valeur+"/"+lastNum);
 		}
 	}
-	
-	console.log(lastNum);
-	console.log(valeur+"+"+lastNum);
-	
+
 }
 
 
